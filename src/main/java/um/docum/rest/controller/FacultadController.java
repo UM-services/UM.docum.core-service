@@ -1,7 +1,7 @@
 /**
  * 
  */
-package ar.edu.um.docum.rest.controller;
+package um.docum.rest.controller;
 
 import java.util.List;
 
@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import ar.edu.um.docum.rest.model.Facultad;
-import ar.edu.um.docum.rest.service.FacultadService;
+import um.docum.rest.model.Facultad;
+import um.docum.rest.service.FacultadService;
 
 /**
  * @author daniel

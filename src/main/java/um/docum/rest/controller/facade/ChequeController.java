@@ -1,7 +1,7 @@
 /**
  * 
  */
-package ar.edu.um.docum.rest.controller.facade;
+package um.docum.rest.controller.facade;
 
 import java.time.OffsetDateTime;
 
@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import ar.edu.um.docum.rest.service.facade.ChequeService;
+import um.docum.rest.service.facade.ChequeService;
 
 /**
  * @author daniel

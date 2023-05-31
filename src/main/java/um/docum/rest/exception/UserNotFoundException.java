@@ -1,7 +1,7 @@
 /**
  * 
  */
-package ar.edu.um.docum.rest.exception;
+package um.docum.rest.exception;
 
 /**
  * @author daniel

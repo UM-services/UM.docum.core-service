@@ -1,15 +1,15 @@
 /**
  * 
  */
-package ar.edu.um.docum.rest.service.facade;
+package um.docum.rest.service.facade;
 
 import java.time.OffsetDateTime;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import ar.edu.um.docum.rest.model.User;
-import ar.edu.um.docum.rest.service.UserService;
+import um.docum.rest.model.User;
+import um.docum.rest.service.UserService;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.transaction.Transactional;

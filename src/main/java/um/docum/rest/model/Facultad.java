@@ -1,7 +1,7 @@
 /**
  * 
  */
-package ar.edu.um.docum.rest.model;
+package um.docum.rest.model;
 
 import java.io.Serializable;
 

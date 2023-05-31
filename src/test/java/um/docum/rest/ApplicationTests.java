@@ -1,4 +1,4 @@
-package ar.edu.um.docum.rest;
+package um.docum.rest;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
