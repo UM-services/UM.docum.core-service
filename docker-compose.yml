@@ -2,7 +2,7 @@ version: "3.9"
 
 services:
 
-  mysql:
+  docum.mysql:
     image: dqmdz/mysql:5.7
     ports:
       - "3306:3306"
@@ -14,21 +14,50 @@ services:
     environment:
       - MYSQL_ROOT_PASSWORD=root
       - TZ=America/Argentina/Mendoza
+    networks:
+      - docum
 
-#  docum:
-#    build: .
-#    ports:
-#      - 8080:8080
-#    deploy:
-#      restart_policy:
-#        condition: on-failure
-#    environment:
-#      APP_SERVER: mysql:3306
-#      APP_DATABASE: docum
-#      APP_USER: root
-#      APP_PASSWORD: root
-#      APP_ADD-PROPERTIES: "false"
-#      APP_LOGGING: "off"
-#      APP_LIVERELOAD_ENABLED: "false"
-#      APP_LIVERELOAD_PORT: 35895
-#      APP_OPEN-IN-VIEW: "false"
+  docum.app:
+    ports:
+      - "8080:8080"
+    build:
+      context: .
+      dockerfile: Dockerfile.local
+    develop:
+      watch:
+        - action: rebuild
+          path: ./src
+    depends_on:
+      - docum.mysql
+    restart: always
+    environment:
+      APP_SERVER: mysql:3306
+      APP_DATABASE: docum
+      APP_USER: root
+      APP_PASSWORD: root
+      APP_ADD-PROPERTIES: "false"
+      APP_LOGGING: "off"
+      APP_LIVERELOAD_ENABLED: "false"
+      APP_LIVERELOAD_PORT: 35895
+      APP_OPEN-IN-VIEW: "false"
+    networks:
+      - docum
+
+  docum.cloudbeaver:
+    image: dbeaver/cloudbeaver:latest
+    restart: always
+    depends_on:
+      - docum.mysql
+    ports:
+      - '48978:8978'
+    volumes:
+      - ./cloudbeaver:/opt/cloudbeaver/workspace
+    networks:
+      - docum
+
+volumes:
+  docum.cloudbeaver:
+  docum.mysql:
+
+networks:
+  docum:
