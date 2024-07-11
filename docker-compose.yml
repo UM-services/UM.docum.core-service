@@ -1,5 +1,3 @@
-version: "3.9"
-
 services:
 
   docum.mysql:
@@ -23,10 +21,6 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.local
-    develop:
-      watch:
-        - action: rebuild
-          path: ./src
     depends_on:
       - docum.mysql
     restart: always
@@ -43,20 +37,7 @@ services:
     networks:
       - docum
 
-  docum.cloudbeaver:
-    image: dbeaver/cloudbeaver:latest
-    restart: always
-    depends_on:
-      - docum.mysql
-    ports:
-      - '48978:8978'
-    volumes:
-      - ./cloudbeaver:/opt/cloudbeaver/workspace
-    networks:
-      - docum
-
 volumes:
-  docum.cloudbeaver:
   docum.mysql:
 
 networks:
