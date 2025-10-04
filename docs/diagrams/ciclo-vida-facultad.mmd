@@ -1,0 +1,7 @@
+stateDiagram-v2
+    [*] --> Creada
+    Creada --> Activa: activar
+    Activa --> Inactiva: desactivar
+    Inactiva --> Activa: reactivar
+    Activa --> [*]: eliminar
+    Inactiva --> [*]: eliminar

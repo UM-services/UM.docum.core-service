@@ -1,0 +1,33 @@
+erDiagram
+    Facultad ||--o{ Documento : contiene
+    User ||--o{ Documento : crea
+
+    Facultad {
+        long id PK
+        string nombre
+        string descripcion
+        string codigo
+        datetime createdDate
+        string createdBy
+        datetime lastModifiedDate
+        string lastModifiedBy
+    }
+
+    User {
+        long id PK
+        string username
+        string email
+        string password
+    }
+
+    Documento {
+        long id PK
+        string titulo
+        string contenido
+        long facultadId FK
+        long userId FK
+        datetime createdDate
+        string createdBy
+        datetime lastModifiedDate
+        string lastModifiedBy
+    }

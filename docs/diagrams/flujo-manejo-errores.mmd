@@ -1,0 +1,16 @@
+sequenceDiagram
+    participant Client
+    participant Controller
+    participant Service
+    participant Repository
+    participant Database
+
+    Client->>Controller: Request
+    Controller->>Service: Process
+    Service->>Repository: Query
+    Repository->>Database: Execute
+    Database-->>Repository: Error (e.g., constraint violation)
+    Repository-->>Service: Exception
+    Service-->>Service: Handle Exception
+    Service-->>Controller: Custom Error Response
+    Controller-->>Client: HTTP Error Response (4xx/5xx)

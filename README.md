@@ -6,20 +6,24 @@
 Servicio core para la gestión documental de la Universidad de Manizales. Este microservicio proporciona las funcionalidades principales para el manejo y procesamiento de documentos, incluyendo la gestión de facultades y documentos académicos.
 
 ## Tecnologías
-- Java 21
-- Spring Boot 3.4.4
+- Java 25
+- Spring Boot 4.0.0-M3
 - Spring Data JPA
-- MySQL 5.7
-- SpringDoc OpenAPI (Swagger)
+- MySQL 9.4.0
+- SpringDoc OpenAPI 3.0.0-M1 (Swagger)
 - Lombok
 - Hibernate Validator 9.0.0.Beta3
-- Spring HATEOAS
+- Spring Boot Actuator
+- Spring Security
+- Apache Commons Lang 3
+- H2 Database (para pruebas)
+- JaCoCo (cobertura de código)
 
 ## Requisitos Previos
-- JDK 21
+- JDK 25
 - Maven 3.8.8 o superior
 - Docker y Docker Compose (para desarrollo local)
-- MySQL 5.7 (para desarrollo sin Docker)
+- MySQL 9.4.0 (para desarrollo sin Docker)
 
 ## Inicio Rápido
 
@@ -60,6 +64,8 @@ El servicio estará disponible en `http://localhost:8080`
 - `APP_DATABASE`: Nombre de la base de datos
 - `APP_USER`: Usuario de la base de datos
 - `APP_PASSWORD`: Contraseña de la base de datos
+- `APP_SWAGGER_USER`: Usuario para autenticación en Swagger UI (por defecto: admin)
+- `APP_SWAGGER_PASSWORD`: Contraseña para autenticación en Swagger UI (por defecto: password)
 - `APP_ADD-PROPERTIES`: Propiedades adicionales
 - `APP_LOGGING`: Nivel de logging
 - `APP_LIVERELOAD_ENABLED`: Habilitar live reload
@@ -68,8 +74,14 @@ El servicio estará disponible en `http://localhost:8080`
 
 ## Documentación API
 La documentación de la API está disponible en:
-- Swagger UI: `http://localhost:8080/swagger-ui.html`
+- Swagger UI: `http://localhost:8080/swagger-ui.html` (requiere autenticación básica: usuario `admin`, contraseña `password`)
 - OpenAPI JSON: `http://localhost:8080/v3/api-docs`
+
+## Monitoreo
+El servicio incluye Spring Boot Actuator para monitoreo y health checks:
+- Health check: `http://localhost:8080/actuator/health`
+- Métricas: `http://localhost:8080/actuator/metrics`
+- Información del servicio: `http://localhost:8080/actuator/info`
 
 ## Estructura del Proyecto
 ```tree

@@ -1,0 +1,29 @@
+graph TB
+    A[Cliente HTTP] --> B[Spring Security]
+    B --> C[Controller Layer]
+    C --> D[Service Layer]
+    D --> E[Repository Layer]
+    E --> F[JPA/Hibernate]
+    F --> G[MySQL Database]
+
+    H[Actuator] --> I[Health Checks]
+    H --> J[Metrics]
+    H --> K[Info]
+
+    L[Swagger UI] --> B
+    M[OpenAPI Docs] --> B
+
+    subgraph "Spring Boot Application"
+        B
+        C
+        D
+        E
+        F
+        H
+    end
+
+    subgraph "External"
+        G
+        L
+        M
+    end
