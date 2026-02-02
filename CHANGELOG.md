@@ -31,7 +31,13 @@ y este proyecto adhiere a [Semantic Versioning](https://semver.org/spec/v2.0.0.h
 ### Removed
 - Maven wrapper script for Windows
 
-## [Unreleased]
+## [0.0.2] - 2026-02-02
+### Changed
+- Upgrade Spring Boot from 4.0.0-M3 to 4.0.2
+- Upgrade MySQL Connector/J from 9.4.0 to 9.6.0
+- Upgrade SpringDoc OpenAPI from 3.0.0-M1 to 3.0.1
+- Upgrade Apache Commons Lang3 from 3.19.0 to 3.20.0
+- Remove executable configuration from spring-boot-maven-plugin
 
 ## [0.0.1-SNAPSHOT] - 2024-03-29
 ### Added
