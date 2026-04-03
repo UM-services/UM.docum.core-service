@@ -7,10 +7,10 @@ Servicio core para la gestión documental de la Universidad de Manizales. Este m
 
 ## Tecnologías
 - Java 25
-- Spring Boot 4.0.2
+- Spring Boot 4.0.5
 - Spring Data JPA
 - MySQL 9.6.0
-- SpringDoc OpenAPI 3.0.1 (Swagger)
+- SpringDoc OpenAPI 3.0.2 (Swagger)
 - Lombok
 - Hibernate Validator 9.0.0.Beta3
 - Spring Boot Actuator
