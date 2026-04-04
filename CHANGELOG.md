@@ -5,6 +5,11 @@ Todos los cambios notables en este proyecto serán documentados en este archivo.
 El formato está basado en [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 y este proyecto adhiere a [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.0.4] - 2026-04-04
+### Changed
+- Upgrade GitHub Actions: checkout@v4→v6, setup-java@v4→v5, cache@v4→v5, deploy-pages@v4→v5
+- Upgrade Docker Actions: login-action@v3→v4, metadata-action@v5→v6, setup-buildx-action@v3→v4, build-push-action@v6→v7
+
 ## [0.0.3] - 2026-04-03
 ### Changed
 - Upgrade Spring Boot from 4.0.2 to 4.0.5

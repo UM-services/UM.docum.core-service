@@ -10,7 +10,7 @@
     </parent>
     <groupId>ar.edu.</groupId>
     <artifactId>um.docum.rest</artifactId>
-    <version>0.0.3</version>
+    <version>0.0.4</version>
     <name>um.docum.rest</name>
     <description>Docum</description>
     <properties>
